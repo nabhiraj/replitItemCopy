@@ -14,14 +14,14 @@ class FileResource(Resource):
 
     def verifyFilePath(self,path):
         path = os.path.abspath(path)
-        if os.path.exists(path) and os.path.isFile(path):
+        if os.path.exists(path) and os.path.isfile(path):
             return True
         else:
             return False
 
     def getResourceData(self):
         with open(self.resourcePath,'rb') as f:
-            fileData = r.read()
+            fileData = f.read()
             encodedData = base64.b64encode(fileData).decode('utf-8')
             return encodedData
         return 'error in reading file data'

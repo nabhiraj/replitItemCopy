@@ -7,5 +7,5 @@ class Server(ABC):
     def stopServer(self):
         pass
     @abstractmethod
-    def setResourceContainer:
+    def setResourceContainer(self):
         pass
