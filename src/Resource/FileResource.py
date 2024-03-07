@@ -1,4 +1,4 @@
-from Resource import Resource
+from .Resource import Resource
 import uuid
 import os
 import base64

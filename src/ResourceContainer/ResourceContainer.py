@@ -16,7 +16,11 @@ class ResourceContainer(ABC):
     @abstractmethod
     def isResourcePresent(self,reqId):
         pass
+
+    @abstractmethod
+    def getResource(self,resourceId):
+        pass
     
     @abstractmethod
-    def getAllHosterResource(self):
+    def getAllResource(self):
         pass

@@ -1,4 +1,4 @@
-from ResourceContainer import ResourceContainer
+from .ResourceContainer import ResourceContainer
 
 class ResourceDictContainer(ResourceContainer):
     
@@ -23,8 +23,11 @@ class ResourceDictContainer(ResourceContainer):
             return True
         else:
             return False
+
+    def getResource(self,resourceId):
+        return self.resourcePathMap[resourceId]
     
-    def getAllHosterResource(self):
+    def getAllResource(self):
         res = []
         for i in self.resourcePathMap:
             res.append(i)
@@ -32,6 +35,3 @@ class ResourceDictContainer(ResourceContainer):
     
     def numOfResource(self):
         return len(self.resourcePathMap)
-
-a = ResourceDictContainer()
-print(a.clearAll())
