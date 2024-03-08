@@ -6,7 +6,7 @@ class ResourceContainer(ABC):
         pass
     
     @abstractmethod
-    def removeResource(self,resource):
+    def removeResource(self,resourceId):
         pass
     
     @abstractmethod
