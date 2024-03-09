@@ -5,11 +5,12 @@ import requests
 import base64
 import uuid
 import shutil
+from .config import connectionInforFileName
 
 class SimpleClient(Client):
 
     def __init__(self,url=None,port=None):
-        self.jsonFile = 'savedConnectionInfo.json'
+        self.jsonFile = connectionInforFileName
         self.jsonFile = os.path.abspath(self.jsonFile)
         if  url and port:
             self.setUpServerConnectionInfo(url,port)
@@ -46,7 +47,7 @@ class SimpleClient(Client):
                 elif temp['type'] == 'dir':
                     self.storeDir(temp,temp['path'])
                     return
-        raise ValueError('request object is in wrong format')
+        raise ValueError('request object is in wrong format or resource does not exist')
 
     def storeFile(self,fileRes,srcPath):
         fileName = os.path.basename(srcPath)

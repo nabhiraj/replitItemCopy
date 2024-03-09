@@ -1,0 +1,1 @@
+connectionInforFileName = 'savedConnectionInfo.json'
