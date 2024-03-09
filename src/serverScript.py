@@ -43,7 +43,7 @@ while True:
         print('enter resource id to remove (enter "go_back" to return to the menu)')
         innerInput = input()
         if innerInput == 'go_back':
-            break
+            continue
         if rc.isResourcePresent(innerInput):
             rc.removeResource(innerInput)
             print('resource removed')
@@ -55,7 +55,7 @@ while True:
         print('enter the resource Path to add (enter "go_back" to return to the menu)')
         innerInput = input()
         if innerInput == 'go_back':
-            break
+            continue
         #later we may need some error handeling.
         path = os.path.abspath(innerInput)
         if os.path.exists(path):
